@@ -1,0 +1,11 @@
+.main {
+  margin: 0px 290px;
+}
+
+/* --- Tablet Breakpoint (640px and up) --- */
+@media (min-width: 640px) {
+}
+
+/* --- Desktop Breakpoint (1024px and up) --- */
+@media (min-width: 1024px) {
+}

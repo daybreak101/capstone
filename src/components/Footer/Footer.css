@@ -1,0 +1,79 @@
+.footer {
+  padding: 100px 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  background-color: #495e57;
+  color: #ffffff;
+}
+
+.footerLeft {
+  display: none;
+}
+
+.footerRight {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footerRow {
+}
+
+.footerRow h2 {
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  font-weight: 600;
+}
+
+.footerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLink {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+}
+
+/* --- Desktop Breakpoint (1024px and up) --- */
+@media (min-width: 1024px) {
+  .footerRow {
+  }
+
+  .footerLeft {
+    display: flex;
+    background-color: #ffffff;
+    padding: 30px;
+  }
+
+  .footerLeft img {
+    width: 120px;
+    height: 240px;
+  }
+
+  .footerRow h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .footerLink {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer {
+    padding: 100px 290px;
+  }
+
+  .footerRow {
+    width: 25%;
+  }
+}

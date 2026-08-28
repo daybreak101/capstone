@@ -1,0 +1,27 @@
+.nav {
+  display: none;
+}
+
+/* --- Desktop Breakpoint (1024px and up) --- */
+@media (min-width: 1024px) {
+  .nav {
+    display: flex;
+    flex: 1;
+  }
+
+  .navList {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .navItem {
+    font-size: 20px;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+  }
+}
