@@ -1,39 +1,41 @@
-.footer {
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap");
+
+.footer__background {
+  background-color: #495e57;
+}
+
+.footer__container {
   padding: 100px 30px;
   display: flex;
   flex-direction: row;
   gap: 90px;
-  background-color: #495e57;
   color: #ffffff;
 }
 
-.footerLeft {
+.footer__left {
   display: none;
 }
 
-.footerRight {
+.footer__right {
   display: flex;
   flex-grow: 1;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.footerRow {
-}
-
-.footerRow h2 {
+.footer__row h2 {
   font-size: 16px;
   font-family: "Karla", sans-serif;
   font-weight: 600;
 }
 
-.footerList {
+.footer__list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footerLink {
+.footer__link {
   padding: 0;
   margin: 0;
   font-size: 16px;
@@ -43,37 +45,46 @@
 
 /* --- Desktop Breakpoint (1024px and up) --- */
 @media (min-width: 1024px) {
-  .footerRow {
-  }
-
-  .footerLeft {
+  .footer__left {
     display: flex;
     background-color: #ffffff;
     padding: 30px;
   }
 
-  .footerLeft img {
+  .footer__left img {
     width: 120px;
     height: 240px;
   }
 
-  .footerRow h2 {
+  .footer__row h2 {
     font-size: 24px;
     font-weight: 600;
   }
 
-  .footerLink {
+  .footer__link {
     font-size: 24px;
     font-weight: 400;
   }
 }
 
 @media (min-width: 1280px) {
-  .footer {
-    padding: 100px 290px;
+  .footer__background {
+    padding: 0;
+    margin: 0;
   }
 
-  .footerRow {
-    width: 25%;
+  .footer__margin {
+    margin: 0px 290px;
+  }
+
+  .footer__container {
+    width: 100%;
+    padding: 100px 0px;
+    max-width: 1280px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .footer__row {
+    width: 33%;
   }
 }

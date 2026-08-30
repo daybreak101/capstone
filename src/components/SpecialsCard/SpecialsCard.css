@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap");
+
+.specials-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #edefee;
+  border-radius: 20px;
+}
+
+.specials-card__content {
+  display: flex;
+  width: 100%;
+}
+
+.specials-card__image {
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.specials-card__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 20px 70px 20px;
+  gap: 20px;
+}
+
+.specials-card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.specials-card__title {
+  font-size: 18px;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+}
+
+.specials-card__price {
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  color: #ee9972;
+}
+
+.specials-card__description {
+  font-size: 11px;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 65ch;
+}
+
+.specials-card__button-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 20px 30px 20px;
+  gap: 5px;
+  bottom: 0;
+  right: 0;
+}
+
+.specials-card__button-container h3 {
+  font-size: 12px;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .specials-card__description {
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 65ch;
+  }
+
+  .specials-card__button-container h3 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .specials-card {
+    max-width: 265px;
+  }
+
+  .specials-card__content {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  .specials-card__text {
+    height: 240px;
+  }
+
+  .specials-card__image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .specials-card__button-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px 30px 20px;
+    gap: 5px;
+  }
+}

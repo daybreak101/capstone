@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap");
+
+.specials {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  gap: 20px;
+}
+
+.specials__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.specials__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specials__title {
+  font-size: 24px;
+  font-family: "Markazi Text", serif;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+  line-height: 0.75;
+}
+
+.scooter {
+  width: 20px;
+}
+
+@media (min-width: 640px) {
+  .specials {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 30px;
+    gap: 20px;
+  }
+
+  .specials__title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .specials__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .specials__title {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .specials__margin {
+    margin: 0px 290px;
+  }
+
+  .specials__container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .specials {
+    width: 100%;
+    padding: 100px 0px;
+    max-width: 1280px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}

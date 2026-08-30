@@ -1,24 +1,23 @@
-.header {
-  padding: 30px 0px;
+.header__container {
+  padding: 10px 0px;
   display: flex;
   align-items: center;
   gap: 0px;
-  /* background-color: rgb(171, 138, 138); */
 }
 
-.headerLogoContainer {
+.header__logo-container {
   display: flex;
   flex-grow: 1;
   justify-content: center;
 }
 
-.headerLogo {
+.header__logo {
   display: block;
   width: 120px;
   height: 50px;
 }
 
-.headerHamburger {
+.header__hamburger {
   position: absolute;
   padding: 0px 30px;
 }
@@ -27,15 +26,15 @@
 @media (min-width: 1024px) {
   .header {
     margin: 0px 20px;
-    gap: 50px;
+    gap: 0px;
   }
 
-  .headerLogoContainer {
+  .header__logo-container {
     display: block;
     flex-grow: 0;
   }
 
-  .headerHamburger {
+  .header__hamburger {
     display: none;
   }
 }
@@ -43,5 +42,15 @@
 @media (min-width: 1280px) {
   .header {
     margin: 0px 290px;
+  }
+
+  .header__container {
+    max-width: 1280px;
+    margin-inline: auto;
+  }
+
+  .header__logo {
+    width: 150px;
+    height: 100px;
   }
 }

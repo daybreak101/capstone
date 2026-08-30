@@ -4,13 +4,13 @@ import './Nav.css'
 export default function Nav() {
   return (
     <nav className="nav">
-        <ul className="navList">
-            <li className="navItem">Home</li>
-            <li className="navItem">About</li>
-            <li className="navItem">Menu</li>
-            <li className="navItem">Reservations</li>
-            <li className="navItem">Order Online</li>
-            <li className="navItem">Login</li>
+        <ul className="nav__list">
+            <li className="nav__item">Home</li>
+            <li className="nav__item">About</li>
+            <li className="nav__item">Menu</li>
+            <li className="nav__item">Reservations</li>
+            <li className="nav__item">Order Online</li>
+            <li className="nav__item">Login</li>
         </ul>
     </nav>
   )

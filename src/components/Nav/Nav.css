@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap');
+
 .nav {
   display: none;
 }
@@ -9,7 +11,7 @@
     flex: 1;
   }
 
-  .navList {
+  .nav__list {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -19,7 +21,7 @@
     
   }
 
-  .navItem {
+  .nav__item {
     font-size: 20px;
     font-family: "Karla", sans-serif;
     font-weight: 700;
