@@ -1,8 +1,11 @@
 import React from "react";
 import "./CallToAction.css";
 import YellowButton from "../YellowButton/YellowButton";
+import { useNavigate } from "react-router-dom";
 
 export default function CallToAction() {
+  const navigate = useNavigate();
+
   return (
     <section className="call-to-action__background">
       <div className="call-to-action__margin">
@@ -17,6 +20,7 @@ export default function CallToAction() {
             <YellowButton
               text="Reserve a Table"
               styles={{ marginTop: "20px" }}
+              onClick={() => navigate("/booking")}
             />
           </div>
 
