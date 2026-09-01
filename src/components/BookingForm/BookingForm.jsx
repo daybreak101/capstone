@@ -6,7 +6,7 @@ import DatePicker from "../DatePicker/DatePicker";
 import YellowButton from "../YellowButton/YellowButton";
 import NumberInput from "../NumberInput/NumberInput";
 
-export default function BookingForm() {
+export default function BookingForm({ availableTimes, dispatch }) {
   const [date, setDate] = useState(null);
   const [time, setTime] = useState(null);
   const [guests, setGuests] = useState(1);
@@ -26,7 +26,7 @@ export default function BookingForm() {
         <Dropdown
           id="res-time"
           label="Book Time"
-          options={["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]}
+          options={availableTimes}
           emptyValue="Choose Time"
           defaultIcon="/images/time.png"
           setSelected={setTime}
