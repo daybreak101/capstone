@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap");
+
+.dropdown-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 48px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.dropdown-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dropdown-icon {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 48px;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.dropdown-icon__open {
+  transform: rotate(180deg);
+  color: #edefee;
+}
+
+.dropdown {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  border: none;
+  border-radius: 16px;
+  padding: 0 10px;
+  color: black;
+  background-color: #edefee;
+  outline: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown__open {
+  background-color: #495e57;
+  color: #edefee;
+}
+
+.dropdown-menu {
+  position: absolute;
+  margin-top: 10px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #edefee;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.dropdown-menu__open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-option {
+  display: flex;
+  height: 80px;
+  border: none;
+  color: black;
+  text-align: center;
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 2px dashed #ccc;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-image {
+  display: flex;
+  position: absolute;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  opacity: 1;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.dropdown-image__open {
+  visibility: hidden;
+  opacity: 0;
+}
