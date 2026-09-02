@@ -25,6 +25,7 @@ export default function DatePicker({ date, setDate }) {
     <>
       <Label htmlFor="res-date" text="Choose date" />
       <input
+        name="date"
         type="date"
         id="res-date"
         min={tomorrow()}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Label from "../Label/Label";
 import "./Dropdown.css";
 
@@ -13,6 +13,16 @@ export default function Dropdown({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // if selected option is not in options, set it to undefined
+  // This is to prevent chosen timeslot from being selected
+  // specifically when the date is changed through the DatePicker,
+  // and the new date does not have that corresponding timeslot
+  useEffect(() => {
+    if(!options.includes(selected)) {
+      setSelected(undefined)
+    }
+  }, [options])
+
   return (
     <>
       {/* Classnames include ternary operators to enable simple css animations */}
@@ -23,6 +33,11 @@ export default function Dropdown({
           setIsOpen(!isOpen);
         }}
       >
+        <input
+          type="hidden"
+          value={selected}
+          name={id}
+        />
         <img
           className={`dropdown-image ${selected && !isOpen ? "dropdown-image__open" : ""}`}
           src={defaultIcon}

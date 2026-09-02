@@ -21,10 +21,8 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           maxWidth: "400px",
           gap: "20px",
         }}
-        onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit(e);
-        }}
+        onSubmit={onSubmit}
+        noValidate
       >
         <DatePicker date={date} setDate={(newDate) => {
           setDate(newDate)

@@ -3,7 +3,6 @@ import Label from "../Label/Label";
 import "./NumberInput.css";
 
 export default function NumberInput({ num, setNum }) {
-
   return (
     <>
       <Label htmlFor="guests" text="Number of guests" />
@@ -17,6 +16,7 @@ export default function NumberInput({ num, setNum }) {
           -
         </button>
         <input
+          name="guests"
           className="number-input"
           type="number"
           value={num}
