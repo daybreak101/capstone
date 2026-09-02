@@ -3,6 +3,7 @@ import './Nav.css'
 
 export default function Nav() {
   return (
+    // TODO: implement links, if required...
     <nav className="nav">
         <ul className="nav__list">
             <li className="nav__item">Home</li>

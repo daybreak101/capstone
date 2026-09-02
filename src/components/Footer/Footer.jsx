@@ -3,11 +3,12 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
+    // TODO: implement footer links, if required...
     <footer className="footer__background">
       <div className="footer__margin">
         <div className="footer__container">
           <section className="footer__left">
-            <img src="images/secondaryLogo.png" alt="Footer Logo" />
+            <img src="images/secondaryLogo.png" alt="Little Lemon Logo" />
           </section>
           <section className="footer__right">
             <div className="footer__row">

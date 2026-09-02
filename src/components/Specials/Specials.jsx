@@ -8,7 +8,7 @@ export default function Specials() {
     <section className="specials__margin">
       <div className="specials">
         <div className="specials__header">
-          <h1 className="specials__title">This Week's Specials</h1>
+          <h2 className="specials__title">This Week's Specials</h2>
           <YellowButton text="Online Menu" styles={undefined} />
         </div>
         <div className="specials__container">

@@ -6,7 +6,7 @@ import Footer from "../../components/Footer/Footer";
 import BookingHero from "../../components/BookingHero/BookingHero";
 import BookingForm from "../../components/BookingForm/BookingForm";
 
-function initializeTimes() {
+export function initializeTimes() {
   return [
     '17:00',
     '18:00',
@@ -17,7 +17,7 @@ function initializeTimes() {
   ]
 }
 
-function updateTimes(state, action){
+export function updateTimes(state, action){
   return state;
 }
 
@@ -36,6 +36,10 @@ export default function BookingPage() {
         <BookingForm 
           availableTimes={availableTimes}
           dispatch={dispatch}
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log('submitted');
+          }}
         />
       </Main>
       <Footer />

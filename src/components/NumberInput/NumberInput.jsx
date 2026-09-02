@@ -8,27 +8,32 @@ export default function NumberInput({ num, setNum }) {
     <>
       <Label htmlFor="guests" text="Number of guests" />
       <div className="number-input__container">
-        <span
+        <button
+          type="button"
           className="number-input__decrement"
+          aria-label="Decrease the number of guests"
           onClick={() => setNum(num > 1 ? num - 1 : num)}
         >
           -
-        </span>
+        </button>
         <input
           className="number-input"
           type="number"
           value={num}
+          onChange={(e) => setNum(Number(e.target.value))}
           placeholder="1"
           min="1"
           max="10"
           id="guests"
         />
-        <span
+        <button
+          type="button"
           className="number-input__increment"
+          aria-label="Increase the number of guests"
           onClick={() => setNum(num < 10 ? num + 1 : num)}
         >
           +
-        </span>
+        </button>
       </div>
     </>
   );

@@ -9,12 +9,13 @@ export default function Dropdown({
   emptyValue,
   defaultIcon,
   selected,
-  setSelected
+  setSelected,
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
+      {/* Classnames include ternary operators to enable simple css animations */}
       <Label htmlFor={id} text={label} className="dropdown-label" />
       <div
         className="dropdown-container"
@@ -27,13 +28,18 @@ export default function Dropdown({
           src={defaultIcon}
           alt="dropdown"
         />
-        <div
+        <button
           id={id}
+          type="button" //prevent form submission aka page reload
           className={`dropdown ${selected && !isOpen ? "dropdown__open" : ""}`}
           value={selected}
+          //aria labels for accessibility since it is not traditional form element
+          aria-label={label}
+          aria-expanded={isOpen}
+          aria-haspopup="listbox"
         >
           {selected && !isOpen ? selected : emptyValue}
-        </div>
+        </button>
         <div
           className={`dropdown-icon ${selected && !isOpen ? "dropdown-icon__open" : ""}`}
         >

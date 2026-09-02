@@ -18,12 +18,12 @@ export default function Chicago() {
           <img
             className="chicago__image1"
             src="/images/restaurant.jpg"
-            alt="Chicago"
+            alt="view of the restaurant's outdoor patio seating area"
           />
           <img
             className="chicago__image2"
             src="/images/Mario-and-Adrian-A.jpg"
-            alt="Chicago"
+            alt="The owners, Mario and Adrian, discussing their latest creation"
           />
         </div>
       </div>

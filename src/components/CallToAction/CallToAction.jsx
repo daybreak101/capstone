@@ -28,10 +28,9 @@ export default function CallToAction() {
             <img
               className="call-to-action__image"
               src="images/restauranfood.jpg"
-              alt="Call to Action"
+              alt="A chef holding a slate platter with four different savory éclairs topped with salmon, prosciutto, roasted peppers, and tomatoes."
             />
           </div>
-
         </div>
       </div>
     </section>

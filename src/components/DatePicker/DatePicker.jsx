@@ -1,7 +1,6 @@
 import React from "react";
 import "./DatePicker.css";
 import Label from "../Label/Label";
-import "./DatePicker.css";
 
 export default function DatePicker({ date, setDate }) {
   const tomorrow = () => {
@@ -30,13 +29,7 @@ export default function DatePicker({ date, setDate }) {
         id="res-date"
         min={tomorrow()}
         max={threeMonths()}
-        onChange={(e) => {
-          setDate(e.target.value)
-          dispatch({
-            type: "UPDATE_TIMES",
-            date: newDate
-          })
-        }}
+        onChange={(e) => setDate(e.target.value)}
         value={date}
       />
     </>

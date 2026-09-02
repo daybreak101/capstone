@@ -6,8 +6,8 @@ import DatePicker from "../DatePicker/DatePicker";
 import YellowButton from "../YellowButton/YellowButton";
 import NumberInput from "../NumberInput/NumberInput";
 
-export default function BookingForm({ availableTimes, dispatch }) {
-  const [date, setDate] = useState(null);
+export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
+  const [date, setDate] = useState("");
   const [time, setTime] = useState(null);
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState(null);
@@ -21,8 +21,18 @@ export default function BookingForm({ availableTimes, dispatch }) {
           maxWidth: "400px",
           gap: "20px",
         }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit(e);
+        }}
       >
-        <DatePicker date={date} setDate={setDate} />
+        <DatePicker date={date} setDate={(newDate) => {
+          setDate(newDate)
+          dispatch({
+            type: "UPDATE_TIMES",
+            date: newDate
+          })
+        }} />
         <Dropdown
           id="res-time"
           label="Book Time"

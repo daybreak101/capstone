@@ -3,6 +3,8 @@ import Nav from "../Nav/Nav";
 import "./Header.css";
 export default function Header() {
   return (
+    // TODO: implement hamburger menu functionality
+    // TODO: implement logo as a link to homepage
     <header className="header">
       <div className="header__container">
         <img
