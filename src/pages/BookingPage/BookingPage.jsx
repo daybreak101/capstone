@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import "./BookingPage.css";
 import Header from "../../components/Header/Header";
 import Main from "../../components/Main/Main";
@@ -38,6 +39,7 @@ export function updateTimes(state, action) {
 }
 
 export default function BookingPage() {
+  const navigate = useNavigate();
   const [availableTimes, dispatch] = useReducer(
     updateTimes,
     [],
@@ -64,6 +66,8 @@ export default function BookingPage() {
             const result = window.submitAPI(formData);
 
             console.log("Submission successful:", result);
+            navigate("/confirmation");
+
           }}
         />
       </Main>
