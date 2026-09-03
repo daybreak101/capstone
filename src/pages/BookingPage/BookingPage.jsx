@@ -66,7 +66,15 @@ export default function BookingPage() {
             const result = window.submitAPI(formData);
 
             console.log("Submission successful:", result);
-            navigate("/confirmation");
+            navigate("/confirmation", {
+              state: {
+                date: formData.get("date"),
+                time: formData.get("res-time"),
+                // name: formData.get("name"),
+                guests: formData.get("guests"),
+                occasion: formData.get("occasion"),
+              }
+            });
 
           }}
         />
