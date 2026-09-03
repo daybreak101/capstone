@@ -3,7 +3,6 @@ import Header from "../../components/Header/Header";
 import Main from "../../components/Main/Main";
 import Footer from "../../components/Footer/Footer";
 import ConfirmationHero from "../../components/ConfirmationHero/ConfirmationHero";
-import ConfirmationDetails from "../../components/ConfirmationDetails/ConfirmationDetails";
 import YellowButton from '../../components/YellowButton/YellowButton';
 import { useNavigate } from "react-router-dom";
 
