@@ -11,12 +11,8 @@ import BookingForm from "../../components/BookingForm/BookingForm";
 // so we are using a local API instead, hence the window.fetchAPI
 // The api.js file is a direct copy of the API file; it is located in the public folder
 export function initializeTimes() {
-  // Date must be chosen before a timeslot is chosen.
-  // This may be changed if requirements change.
-  return [];
-
-  // Otherwise I could just use today's timeslots:
-  //return window.fetchAPI(new Date());
+  // I could just use today's timeslots:
+  return window.fetchAPI(new Date());
 
   // This was the code pre-API, just leaving it here for reference
   // return [
@@ -60,7 +56,7 @@ export default function BookingPage() {
             const formData = new FormData(e.currentTarget);
 
             for (const [key, value] of formData.entries()) {
-              console.log(key, value);
+              console.log(key, value, typeof value);
             }
 
             const result = window.submitAPI(formData);

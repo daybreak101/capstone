@@ -7,10 +7,17 @@ import YellowButton from "../YellowButton/YellowButton";
 import NumberInput from "../NumberInput/NumberInput";
 
 export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState(null);
+  const [date, setDate] = useState(() => {
+    const date = new Date();
+    date.setDate(date.getDate());
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`
+  });
+  const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState(null);
+  const [occasion, setOccasion] = useState("");
 
   return (
     <section className="booking-form__margin">
