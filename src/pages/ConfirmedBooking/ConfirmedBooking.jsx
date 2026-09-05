@@ -34,6 +34,15 @@ export default function ConfirmedBooking() {
               <span className="confirmation-details__subtitle">Time:</span>
               <span className="confirmation-details__text">{data.time}</span>
 
+              <span className="confirmation-details__subtitle">First Name:</span>
+              <span className="confirmation-details__text">{data.firstName}</span>
+
+              <span className="confirmation-details__subtitle">Last Name:</span>
+              <span className="confirmation-details__text">{data.lastName}</span>
+
+              <span className="confirmation-details__subtitle">Phone Number:</span>
+              <span className="confirmation-details__text">{data.phoneNumber}</span>
+
               <span className="confirmation-details__subtitle">Guests:</span>
               <span className="confirmation-details__text">{data.guests}</span>
 

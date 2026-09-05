@@ -5,7 +5,7 @@ import "./BookingForm.css";
 import DatePicker from "../DatePicker/DatePicker";
 import YellowButton from "../YellowButton/YellowButton";
 import NumberInput from "../NumberInput/NumberInput";
-import { Formik } from "formik";
+import TextInput from "../TextInput/TextInput";
 
 export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
   const [date, setDate] = useState(() => {
@@ -19,66 +19,31 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const phoneRegex = /^\+?[\d\s()-]{7,20}$/;
+
+  // check if the form is valid before submitting
+  const validate = (e) => {
+    e.preventDefault();
+    const errors = {};
+    if (!time) errors.time = "Timeslot is required";
+    if (!firstName.trim()) errors.firstName = "First name is required";
+    if (!lastName.trim()) errors.lastName = "Last name is required";
+    if (!phoneNumber.trim()) {
+      errors.phoneNumber = "Phone number is required";
+    } else if (!phoneRegex.test(phoneNumber.trim())) {
+      errors.phoneNumber = "Enter a valid phone number";
+    }
+    setErrors(errors);
+    if (Object.keys(errors).length === 0) onSubmit(e);
+  };
 
   return (
     <section className="booking-form__margin">
-      <Formik
-        initialValues={{
-          date: () => {
-            const date = new Date();
-            date.setDate(date.getDate());
-            const yyyy = date.getFullYear();
-            const mm = String(date.getMonth() + 1).padStart(2, "0");
-            const dd = String(date.getDate()).padStart(2, "0");
-            return `${yyyy}-${mm}-${dd}`;
-          },
-          time: "",
-          guests: 1,
-          occasion: "",
-          firstName: "",
-          lastName: "",
-          phoneNumber: "",
-        }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.firstName) {
-            errors.firstName = "Required";
-          }
-          if (!values.lastName) {
-            errors.lastName = "Required";
-          }
-          if (!values.phoneNumber) {
-            errors.phoneNumber = "Required";
-          }
-          if (!values.date) {
-            errors.date = "Required";
-          }
-          if (!values.time) {
-            errors.time = "Required";
-          }
-          if (!values.guests) {
-            errors.guests = "Required";
-          }
-          // occasion is not required
-          return errors;
-        }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
-        }}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-        }) => <>{/* insert form here; https://formik.org/docs/overview*/}</>}
-      </Formik>
       <form
         className="booking-form"
         style={{
@@ -86,7 +51,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           maxWidth: "400px",
           gap: "20px",
         }}
-        onSubmit={onSubmit}
+        onSubmit={validate}
         noValidate
       >
         <DatePicker
@@ -108,6 +73,31 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           setSelected={setTime}
           selected={time}
         />
+        {errors.time && <p className="error">{errors.time}</p>}
+        <TextInput
+          id="firstName"
+          label="First Name"
+          placeholder="Enter First Name"
+          setValue={setFirstName}
+          value={firstName}
+        />
+        {errors.firstName && <p className="error">{errors.firstName}</p>}
+        <TextInput
+          id="lastName"
+          label="Last Name"
+          placeholder="Enter Last Name"
+          setValue={setLastName}
+          value={lastName}
+        />
+        {errors.lastName && <p className="error">{errors.lastName}</p>}
+        <TextInput
+          id="phoneNumber"
+          label="Enter Phone Number"
+          placeholder="Phone Number"
+          setValue={setPhoneNumber}
+          value={phoneNumber}
+        />
+        {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}
         <NumberInput num={guests} setNum={setGuests} />
         <Dropdown
           id="occasion"

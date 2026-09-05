@@ -66,7 +66,9 @@ export default function BookingPage() {
               state: {
                 date: formData.get("date"),
                 time: formData.get("res-time"),
-                // name: formData.get("name"),
+                firstName: formData.get("firstName"),
+                lastName: formData.get("lastName"),
+                phoneNumber: formData.get("phoneNumber"),
                 guests: formData.get("guests"),
                 occasion: formData.get("occasion"),
               }
