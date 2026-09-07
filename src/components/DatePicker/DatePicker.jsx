@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import "./DatePicker.css";
 import Label from "../Label/Label";
 
-export default function DatePicker({ date, setDate }) {
+export default function DatePicker({ date, setDate, required }) {
   const today = () => {
     const date = new Date();
     date.setDate(date.getDate());
@@ -38,6 +38,7 @@ export default function DatePicker({ date, setDate }) {
         max={threeMonths()}
         onChange={(e) => setDate(e.target.value)}
         value={date}
+        required={required}
       />
     </>
   );

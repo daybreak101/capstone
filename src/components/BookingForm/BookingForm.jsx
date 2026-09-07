@@ -17,7 +17,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
     return `${yyyy}-${mm}-${dd}`;
   });
   const [time, setTime] = useState("");
-  const [guests, setGuests] = useState(1);
+  const [guests, setGuests] = useState(0);
   const [occasion, setOccasion] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -25,19 +25,32 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
   const [errors, setErrors] = useState({});
 
   const phoneRegex = /^\+?[\d\s()-]{7,20}$/;
+  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
 
   // check if the form is valid before submitting
   const validate = (e) => {
     e.preventDefault();
     const errors = {};
     if (!time) errors.time = "Timeslot is required";
-    if (!firstName.trim()) errors.firstName = "First name is required";
-    if (!lastName.trim()) errors.lastName = "Last name is required";
+    if (!firstName.trim()) {
+      errors.firstName = "First name is required";
+    } else if (!nameRegex.test(firstName.trim())) {
+      errors.firstName = "Enter a valid first name";
+    }
+    if (!lastName.trim()) {
+      errors.lastName = "Last name is required";
+    } else if (!nameRegex.test(lastName.trim())) {
+      errors.lastName = "Enter a valid last name";
+    }
     if (!phoneNumber.trim()) {
       errors.phoneNumber = "Phone number is required";
     } else if (!phoneRegex.test(phoneNumber.trim())) {
       errors.phoneNumber = "Enter a valid phone number";
     }
+    if(guests < 1 || guests > 10) {
+      errors.guests = "Number of guests must be between 1 and 10";
+    }
+
     setErrors(errors);
     if (Object.keys(errors).length === 0) onSubmit(e);
   };
@@ -46,6 +59,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
     <section className="booking-form__margin">
       <form
         className="booking-form"
+        aria-label="Booking Form"
         style={{
           display: "grid",
           maxWidth: "400px",
@@ -63,6 +77,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
               date: newDate,
             });
           }}
+          required={true}
         />
         <Dropdown
           id="res-time"
@@ -80,6 +95,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           placeholder="Enter First Name"
           setValue={setFirstName}
           value={firstName}
+          required={true}
         />
         {errors.firstName && <p className="error">{errors.firstName}</p>}
         <TextInput
@@ -88,6 +104,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           placeholder="Enter Last Name"
           setValue={setLastName}
           value={lastName}
+          required={true}
         />
         {errors.lastName && <p className="error">{errors.lastName}</p>}
         <TextInput
@@ -96,9 +113,12 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           placeholder="Phone Number"
           setValue={setPhoneNumber}
           value={phoneNumber}
+          required={true}
+          type="tel"
         />
         {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}
-        <NumberInput num={guests} setNum={setGuests} />
+        <NumberInput num={guests} setNum={setGuests} required={true} />
+        {errors.guests && <p className="error">{errors.guests}</p>}
         <Dropdown
           id="occasion"
           label="Occasion"

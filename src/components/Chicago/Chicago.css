@@ -15,7 +15,7 @@
   justify-content: center;
   padding: 5% 5%;
   position: absolute;
-  z-index: 999;
+  z-index: 9;
   background-color: rgba(0, 0, 0, 0.5);
   left: 50%;
   top: 50%;
@@ -98,7 +98,7 @@
   .chicago__left {
     padding: 5% 0%;
     position: relative;
-    z-index: 999;
+    z-index: 9;
     background-color: rgba(175, 165, 165, 0);
     left: 0%;
     top: 0%;

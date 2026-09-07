@@ -12,7 +12,16 @@
   font-weight: 700;
   border: none;
   cursor: pointer;
-  
+  transition: all 0.3s ease;
+}
+
+.yellow-button:hover {
+  background-color: #333333;
+  color: #edefee;
+}
+
+.yellow-button__anim {
+  animation: pop2 0.2s ease;
 }
 
 @media (min-width: 640px) {
@@ -20,5 +29,17 @@
   .yellow-button {
     font-size: 20px;
     padding: 20px;
+  }
+}
+
+@keyframes pop2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }

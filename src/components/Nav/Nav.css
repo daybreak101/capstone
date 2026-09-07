@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap');
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .nav {
   display: none;
 }

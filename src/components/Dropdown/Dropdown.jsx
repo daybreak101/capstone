@@ -12,16 +12,17 @@ export default function Dropdown({
   setSelected,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [focus, setFocus] = useState(false);
 
   // if selected option is not in options, set it to undefined
   // This is to prevent chosen timeslot from being selected
   // specifically when the date is changed through the DatePicker,
   // and the new date does not have that corresponding timeslot
   useEffect(() => {
-    if(!options.includes(selected)) {
-      setSelected(undefined)
+    if (!options.includes(selected)) {
+      setSelected("");
     }
-  }, [options])
+  }, [options]);
 
   return (
     <>
@@ -32,12 +33,16 @@ export default function Dropdown({
         onClick={() => {
           setIsOpen(!isOpen);
         }}
+        onFocus={() => setFocus(true)}
+        onBlur={(e) => {
+          setFocus(false);
+
+          if (!e.currentTarget.contains(e.relatedTarget)) {
+            setIsOpen(false);
+          }
+        }}
       >
-        <input
-          type="hidden"
-          value={selected}
-          name={id}
-        />
+        <input type="hidden" value={selected} name={id} />
         <img
           className={`dropdown-image ${selected && !isOpen ? "dropdown-image__open" : ""}`}
           src={defaultIcon}
@@ -46,14 +51,14 @@ export default function Dropdown({
         <button
           id={id}
           type="button" //prevent form submission aka page reload
-          className={`dropdown ${selected && !isOpen ? "dropdown__open" : ""}`}
+          className={`dropdown ${selected && !isOpen ? "dropdown__open" : ""} ${focus ? "dropdown__focus" : ""}`}
           value={selected}
           //aria labels for accessibility since it is not traditional form element
           aria-label={label}
           aria-expanded={isOpen}
           aria-haspopup="listbox"
         >
-          {selected && !isOpen ? selected : emptyValue}
+          {selected && !isOpen ? selected : isOpen ? emptyValue : emptyValue}
         </button>
         <div
           className={`dropdown-icon ${selected && !isOpen ? "dropdown-icon__open" : ""}`}
@@ -63,7 +68,8 @@ export default function Dropdown({
 
         <div className={`dropdown-menu ${isOpen ? "dropdown-menu__open" : ""}`}>
           {options.map((option) => (
-            <div
+            <button
+              type="button"
               className="dropdown-option"
               key={option}
               onClick={() => {
@@ -72,7 +78,7 @@ export default function Dropdown({
               }}
             >
               {option}
-            </div>
+            </button>
           ))}
         </div>
       </div>

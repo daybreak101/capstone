@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    // TODO: implement footer links, if required...
     <footer className="footer__background">
       <div className="footer__margin">
         <div className="footer__container">
@@ -14,10 +14,10 @@ export default function Footer() {
             <div className="footer__row">
               <h2>Doormat Navigation</h2>
               <ul className="footer__list">
-                <li className="footer__link">Home</li>
+                <li className="footer__link"><Link to="/">Home</Link></li>
                 <li className="footer__link">About</li>
                 <li className="footer__link">Menu</li>
-                <li className="footer__link">Reservations</li>
+                <li className="footer__link"><Link to="/booking">Reservation</Link></li>
                 <li className="footer__link">Order Online</li>
                 <li className="footer__link">Login</li>
               </ul>
