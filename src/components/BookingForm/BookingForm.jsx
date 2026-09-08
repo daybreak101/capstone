@@ -100,6 +100,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           setValue={setFirstName}
           value={firstName}
           required={true}
+          max={50}
         />
         {errors.firstName && <p className="error">{errors.firstName}</p>}
         <TextInput
@@ -109,6 +110,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           setValue={setLastName}
           value={lastName}
           required={true}
+          max={50}
         />
         {errors.lastName && <p className="error">{errors.lastName}</p>}
         <TextInput
@@ -119,6 +121,7 @@ export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
           value={phoneNumber}
           required={true}
           type="tel"
+          max={20}
         />
         {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}
         <NumberInput num={guests} setNum={setGuests} required={true} />

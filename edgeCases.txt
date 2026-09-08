@@ -1,0 +1,64 @@
+Date:
+- date is required
+    - date is defaulted to today
+    - Completed
+- date is invalid
+    - TODO
+- date is in the past
+    - HTML input has min date set by function
+    - Completed
+
+Time:
+- time is required
+    - Completed
+- time is invalid
+    - time is given by api, which is always valid
+    - Completed
+- time is in the past
+    - TODO: THIS
+
+First Name & Last Name:
+- name is required
+    - Completed
+- name is invalid
+    - Checked by regex
+    - Completed
+- name is too long
+    - HTML input has max lengths
+    - Completed
+- name is too short
+    - error handler checks for min length
+    - Completed
+
+Phone Number:
+- phone number is required
+    - Completed
+- phone number is invalid
+    - Checked by regex
+    - Completed
+- phone number is too long
+    - HTML input has max lengths
+    - Completed
+- phone number is too short
+    - error handler checks for min length
+    - Completed
+
+Guests:
+- guests is required
+    - Completed
+- guests is invalid
+    - TODO
+- guests is too high
+    - error handler checks for max length
+    - Completed
+- guests is too low
+    - error handler checks for min length
+    - Completed
+
+Occasion:
+- occasion is not required
+- occasion cannot be invalid 
+- occasion can be empty
+
+
+

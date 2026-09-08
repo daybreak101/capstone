@@ -9,7 +9,8 @@ export default function TextInput({
   setValue,
   value,
   required, 
-  type
+  type,
+  max
 }) {
   const [focus, setFocus] = useState(false);
 
@@ -28,6 +29,7 @@ export default function TextInput({
         required={required}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
+        maxLength={max ? max : 100}
       />
     </>
   );
