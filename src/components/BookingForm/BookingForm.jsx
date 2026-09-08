@@ -7,6 +7,10 @@ import YellowButton from "../YellowButton/YellowButton";
 import NumberInput from "../NumberInput/NumberInput";
 import TextInput from "../TextInput/TextInput";
 
+// TODO: figure out edge cases
+// TODO: add comments on everything
+// TODO: develop README file and setup instructions
+// and for running the project
 export default function BookingForm({ availableTimes, dispatch, onSubmit }) {
   const [date, setDate] = useState(() => {
     const date = new Date();
