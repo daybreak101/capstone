@@ -5,18 +5,19 @@ currently live does not have this feature, so this project serves
 as a proof of concept for the feature.
 
 ## Technologies Used:
-React 19.2.8
-React Router DOM 7.18.3
-Jest
+React 19.2.8 \
+React Router DOM 7.18.3 \
+Jest \
 CSS / Google Fonts
 
 ## To set up the project and run on your local machine:
-In your desired directory, run the following commands:
-git clone https://github.com/daybreak101/capstone.git
-cd my-app
-npm install
-npm run start
-
+In your desired directory, run the following commands: \
+```bash
+git clone https://github.com/daybreak101/capstone.git 
+cd capstone 
+npm install 
+npm run start 
+```
 
 ## Available Scripts
 
