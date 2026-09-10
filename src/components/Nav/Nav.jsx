@@ -2,6 +2,8 @@ import React from 'react'
 import './Nav.css'
 import { Link } from "react-router-dom";
 
+// Nav bar links only work to Home and Reservations
+// Since these are the only pages that were required.
 export default function Nav() {
   return (
     <nav className="nav">

@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Nav from "../Nav/Nav";
 import "./Header.css";
 import { Link } from "react-router-dom";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Only Home and Reservation links are functional
+  // since these are the only pages that were required
+
+  // Smaller screens will have a hamburger menu
+  // Since nav bar is not visible on smaller screens
   return (
     <header className="header">
       <div className="header__container">

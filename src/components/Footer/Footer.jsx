@@ -3,6 +3,8 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  // Footer links only work to Home and Reservations
+  // Since these are the only pages that were required.
   return (
     <footer className="footer__background">
       <div className="footer__margin">

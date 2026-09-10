@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Label from "../Label/Label";
 import "./TextInput.css";
 
+// Reusable component for text inputs for CSS consistency
 export default function TextInput({
   id,
   label,
@@ -18,7 +19,6 @@ export default function TextInput({
     <>
       <Label htmlFor={id} text={label} />
       <input
-        // className="text-input"
         className={`text-input ${focus ? "text-input__focus" : value ? "text-input__filled" : ""}`}
         name={id}
         type={type ? type : "text"}

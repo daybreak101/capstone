@@ -7,18 +7,18 @@ import BookingPage from "./pages/BookingPage/BookingPage";
 import ConfirmedBooking from "./pages/ConfirmedBooking/ConfirmedBooking";
 
 function ScrollToTop() {
+  // Code serves to scroll to the top of the page when the user navigates to a different page
+  // Noticed this happens when user clicks links
   const { pathname } = useLocation();
-
   useEffect(() => {
-    window.scrollTo(0, 0); // Forces the window back to the top left corner
-  }, [pathname]); // Runs every time the URL path changes
+    window.scrollTo(0, 0);
+  }, [pathname]); 
 
   return null;
 }
 
 function App() {
   return (
-    // <HomePage />
     <BrowserRouter>
       <ScrollToTop />
       <Routes>

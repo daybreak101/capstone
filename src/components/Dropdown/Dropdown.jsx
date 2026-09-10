@@ -42,6 +42,7 @@ export default function Dropdown({
           }
         }}
       >
+        {/* this is a hidden input to store the selected value, that way the form can read it */}
         <input type="hidden" value={selected} name={id} />
         <img
           className={`dropdown-image ${selected && !isOpen ? "dropdown-image__open" : ""}`}

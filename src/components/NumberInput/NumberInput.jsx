@@ -3,12 +3,16 @@ import Label from "../Label/Label";
 import "./NumberInput.css";
 
 export default function NumberInput({ num, setNum, required }) {
+  // States are purely for animation purposes
   const [focus, setFocus] = useState(false);
   const [leftFocus, setLeftFocus] = useState(false);
   const [rightFocus, setRightFocus] = useState(false);
   const [decrementAnim, setDecrementAnim] = useState(false);
   const [incrementAnim, setIncrementAnim] = useState(false);
 
+  // Animation for clicking the decrement button
+  // Timeout serves to prevent animation from bugging out
+  // from spam clicks
   const handleLeftAnim = (e) => {
     if (decrementAnim) return;
     setDecrementAnim(true);
@@ -17,6 +21,9 @@ export default function NumberInput({ num, setNum, required }) {
     }, 200);
   };
 
+  // Animation for clicking the increment button
+  // Timeout serves to prevent animation from bugging out
+  // from spam clicks
   const handleRightAnim = (e) => {
     if (incrementAnim) return;
     setIncrementAnim(true);

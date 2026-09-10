@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./YellowButton.css";
 
-// TODO: add a clicked effect/anim to the button
 export default function YellowButton({ text, styles, onClick, type }) {
     const [anim, setAnim] = useState(false);
 

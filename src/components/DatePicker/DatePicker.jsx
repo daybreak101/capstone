@@ -3,6 +3,7 @@ import "./DatePicker.css";
 import Label from "../Label/Label";
 
 export default function DatePicker({ date, setDate, required }) {
+  // Set minimum allowed date to today
   const today = () => {
     const date = new Date();
     date.setDate(date.getDate());
@@ -12,6 +13,8 @@ export default function DatePicker({ date, setDate, required }) {
     return `${yyyy}-${mm}-${dd}`;
   };
 
+  // Set maximum allowed date to 3 months from today
+  // Requirements didn't specify, I just chose 3 months
   const threeMonths = () => {
     const date = new Date();
     date.setMonth(date.getMonth() + 3);
@@ -21,6 +24,7 @@ export default function DatePicker({ date, setDate, required }) {
     return `${yyyy}-${mm}-${dd}`;
   };
 
+  //initialize date to today      
   useEffect(() => {
     if (!date) {
       setDate(() => today());
