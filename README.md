@@ -11,7 +11,7 @@ Jest \
 CSS / Google Fonts
 
 ## To set up the project and run on your local machine:
-In your desired directory, run the following commands: \
+In your desired directory, run the following commands: 
 ```bash
 git clone https://github.com/daybreak101/capstone.git 
 cd capstone 
